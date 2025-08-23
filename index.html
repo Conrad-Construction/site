@@ -1,20 +1,352 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeBuild Construction | Home</title>
     <style>
+        /* === BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #e8491d; /* Company accent color (orange) */
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #333;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: #f8f8f8;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e8491d;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .nav-menu a:hover {
+            color: #e8491d;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.4&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            height: 80vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* === SERVICES SECTION === */
+        .services {
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-box h3 {
+            margin: 15px 0;
+            color: #e8491d;
+        }
+
+        /* === ABOUT SECTION === */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1 1 500px;
+        }
+
+        .about-image {
+            flex: 1 1 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* === PROJECTS SECTION === */
+        .projects {
+            background: #f4f4f4;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-item {
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1 1 400px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is my free GitHub Pages website.</p>
-    <p>You can edit this content anytime.</p>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">PrimeBuild Construction</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Building Your Vision, Strengthening Your Foundation</h1>
+            <p>Quality, integrity, and excellence in every project we undertake.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <h3>Residential Construction</h3>
+                    <p>From custom homes to renovations, we build the space your family will love and cherish for years to come.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Commercial Construction</h3>
+                    <p>Building functional and impressive spaces for businesses, offices, and retail establishments.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Project Management</h3>
+                    <p>We handle the entire process from planning and permits to construction and final inspection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>With over 15 years of experience, PrimeBuild Construction has established itself as a leader in the industry. Our commitment to quality craftsmanship, on-time delivery, and transparent communication sets us apart.</p>
+                    <p>We believe in building lasting relationships with our clients, based on trust and the unwavering quality of our work. Every nail, every beam, and every finish is executed with precision and care.</p>
+                    <a href="#contact" class="btn">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Construction team meeting on site">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-container">
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Modern House Project">
+                    <div class="project-info">
+                        <h3>Modern Family Home</h3>
+                        <p>A sleek, contemporary home built with energy-efficient materials and smart home technology.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Office Renovation">
+                    <div class="project-info">
+                        <h3>Corporate Office Renovation</h3>
+                        <p>Complete interior overhaul of a downtown office building, creating a modern collaborative workspace.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Commercial Building">
+                    <div class="project-info">
+                        <h3>Retail Space Build-Out</h3>
+                        <p>Ground-up construction of a new retail strip center, featuring multiple storefronts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Address:</strong> 123 Builder Street, Construction City, CC 12345</p>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>Email:</strong> info@primebuild.example.com</p>
+                    <p><strong>Hours:</strong> Mon-Fri: 8AM - 5PM</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PrimeBuild Construction. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
